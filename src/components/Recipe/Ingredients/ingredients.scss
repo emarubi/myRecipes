@@ -1,0 +1,25 @@
+.ingredients {
+  margin-bottom: 2rem;
+
+  &__item {
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    padding: .5rem 2em;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &__quantity {
+      background-color:#F18042;
+      color: #fff;
+      padding: .6rem .8rem;
+      border-radius: .3rem;
+      display: inline-block;
+      margin-right: 0.3rem;
+    }
+
+    &__name {
+
+    }
+  }
+}
