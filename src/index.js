@@ -1,18 +1,27 @@
 // == Import : npm
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 
 // == Import : local
 // Composants
 import App from 'src/components/App';
 
+import store from 'src/store';
+
 // == Render
-// 1. Élément React racine (celui qui contient l'ensemble de l'app)
-//    => crée une structure d'objets imbriqués (DOM virtuel)
+// On englobe notre composant App
+// dans le Provider (redux)
+// et dans le BrowserRouter (react-router)
+// ce pattern s'apelle HoC
+// Higher-order Component
+// = composant de plus haut niveau
 const rootReactElement = (
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </BrowserRouter>
 );
 // 2. La cible du DOM (là où la structure doit prendre vie dans le DOM)
