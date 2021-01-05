@@ -1,22 +1,39 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './home.scss';
 
-const Home = () => (
+const Home = ({ recipes }) => (
   <div className="home">
-    <div className="home__card">
-      <img className="home__card__img" src="https://images.pexels.com/photos/263041/pexels-photo-263041.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" />
-      <div className="home__card__content">
-        <h2 className="home__card__content__title">
-          Crepe
-        </h2>
-        <span className="home__card__content__difficulty">
-          Difficulté : Facile
-        </span>
-        <a className="home__card__content__link">Voir la recette</a>
+    {recipes.map((recipe) => (
+      <div key={recipe.id} className="home__card">
+        <img className="home__card__img" alt={recipe.name} src={recipe.thumbnail} />
+        <div className="home__card__content">
+          <h2 className="home__card__content__title">
+            Crepe
+          </h2>
+          <span className="home__card__content__difficulty">
+            Difficulté : {recipe.difficulty}
+          </span>
+          <a className="home__card__content__link">Voir la recette</a>
+        </div>
       </div>
-    </div>
+    ))}
   </div>
 );
+
+Home.propTypes = {
+  recipes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      difficulty: PropTypes.string.isRequired,
+      ingredients: PropTypes.array.isRequired,
+      instructions: PropTypes.array.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default Home;
