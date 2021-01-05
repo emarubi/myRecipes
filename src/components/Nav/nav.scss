@@ -1,14 +1,16 @@
 @use 'src/styles/vars';
 
 .nav {
-  position: sticky;
+  padding-top: 1rem;
+  width: 25vw;
   width: 20vw;
   height: 100vh;
   background-color: vars.$color-secondary;
   border: 3px solid vars.$color-secondary;
 
   &__item {
-    margin: 0.3rem 0 0.3rem 1.5rem;
+    display: block;
+    margin: 1rem 0 1rem 1.5rem;
     font-size: 1.3rem;
 
     &--active {

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import './nav.scss';
 
@@ -9,17 +10,26 @@ import './nav.scss';
 const Nav = ({ recipes }) => (
   <nav className="nav">
     <ul>
-      <li
-        className="nav__item nav__item--active"
-      >
-        Accueil
-      </li>
-      {recipes.map((recipe) => (
-        <li
-          key={recipe.id}
+      <li>
+        <NavLink
+          activeClassName="nav__item--active"
+          exact
+          to="/"
           className="nav__item"
         >
-          {recipe.title}
+          Accueil
+        </NavLink>
+      </li>
+      {recipes.map((recipe) => (
+        <li key={recipe.id}>
+          <NavLink
+            exact
+            activeClassName="nav__item--active"
+            to={`/recipe/${recipe.id}`}
+            className="nav__item"
+          >
+            {recipe.title}
+          </NavLink>
         </li>
       ))}
     </ul>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './home.scss';
 
@@ -15,7 +16,12 @@ const Home = ({ recipes }) => (
           <span className="home__card__content__difficulty">
             Difficulté : {recipe.difficulty}
           </span>
-          <a className="home__card__content__link">Voir la recette</a>
+          <Link
+            to={`/recipe/${recipe.id}`}
+            className="home__card__content__link"
+          >
+            Voir la recette
+          </Link>
         </div>
       </div>
     ))}
