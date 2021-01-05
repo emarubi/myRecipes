@@ -7,9 +7,8 @@ import Title from 'src/components/Title';
 import Nav from 'src/containers/Nav';
 import Page from 'src/components/Page';
 import Home from 'src/containers/Home';
-import Recipe from 'src/components/Recipe';
+import Recipe from 'src/containers/Recipe';
 
-import data from 'src/data';
 import './app.scss';
 
 // == Composant
@@ -21,9 +20,9 @@ const App = () => (
         <Title title="Accueil" />
         <Home />
       </Route>
-      <Route exact path="/recipe/:id">
+      <Route exact path="/recipe/:slug">
         <Title title="Accueil" />
-        <Recipe recipe={data[1]} />
+        <Recipe />
       </Route>
     </Page>
   </div>

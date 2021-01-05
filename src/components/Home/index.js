@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { buildRecipeURL } from 'src/utils';
 
 import './home.scss';
 
@@ -17,7 +18,7 @@ const Home = ({ recipes }) => (
             Difficulté : {recipe.difficulty}
           </span>
           <Link
-            to={`/recipe/${recipe.id}`}
+            to={buildRecipeURL(recipe.title)}
             className="home__card__content__link"
           >
             Voir la recette

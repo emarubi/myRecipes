@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { buildRecipeURL } from 'src/utils';
 
 import './nav.scss';
 
@@ -25,7 +26,7 @@ const Nav = ({ recipes }) => (
           <NavLink
             exact
             activeClassName="nav__item--active"
-            to={`/recipe/${recipe.id}`}
+            to={buildRecipeURL(recipe.title)}
             className="nav__item"
           >
             {recipe.title}
