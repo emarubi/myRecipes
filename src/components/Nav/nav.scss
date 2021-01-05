@@ -1,0 +1,18 @@
+@use 'src/styles/vars';
+
+.nav {
+  position: sticky;
+  width: 20vw;
+  height: 100vh;
+  background-color: vars.$color-secondary;
+  border: 3px solid vars.$color-secondary;
+
+  &__item {
+    margin: 0.3rem 0 0.3rem 1.5rem;
+    font-size: 1.3rem;
+
+    &--active {
+      color: vars.$color-primary;
+    }
+  }
+}

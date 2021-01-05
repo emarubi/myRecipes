@@ -1,0 +1,7 @@
+@use 'src/styles/vars';
+
+.page {
+  height: 100vh;
+  overflow-y: scroll;
+  box-shadow: 1px 1px 34px 0px rgba(148,148,148,0.5);
+}

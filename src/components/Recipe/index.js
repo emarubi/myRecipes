@@ -32,14 +32,16 @@ function Recipe({ recipe }) {
 }
 
 Recipe.propTypes = {
-  recipe: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    difficulty: PropTypes.string.isRequired,
-    ingredients: PropTypes.array.isRequired,
-    instructions: PropTypes.array.isRequired,
-  }).isRequired,
+  recipe: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      difficulty: PropTypes.string.isRequired,
+      ingredients: PropTypes.array.isRequired,
+      instructions: PropTypes.array.isRequired,
+    }),
+  ).isRequired,
 };
 
 // == Export
