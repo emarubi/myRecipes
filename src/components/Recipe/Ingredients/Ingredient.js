@@ -19,7 +19,10 @@ const Ingredient = ({
 // == Validation de props
 Ingredient.propTypes = { // mes props sont de type...
   id: PropTypes.number.isRequired, // un id
-  quantity: PropTypes.number.isRequired, // une quantité
+  quantity: PropTypes.oneOfType([ // on autorise des quantités
+    PropTypes.number.isRequired, // en nombre
+    PropTypes.string.isRequired, // ou en texte
+  ]).isRequired,
   unit: PropTypes.string.isRequired, // une unité
   name: PropTypes.string.isRequired, // un nom
 };

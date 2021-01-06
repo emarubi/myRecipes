@@ -1,32 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { buildRecipeURL } from 'src/utils';
-
+import { buildRecipeURL, getTitleByRecipesNumber } from 'src/utils';
 import './home.scss';
+import Title from 'src/components/Title';
+import LoginForm from '../LoginForm';
 
 const Home = ({ recipes }) => (
-  <div className="home">
-    {recipes.map((recipe) => (
-      <div key={recipe.id} className="home__card">
-        <img className="home__card__img" alt={recipe.name} src={recipe.thumbnail} />
-        <div className="home__card__content">
-          <h2 className="home__card__content__title">
-            Crepe
-          </h2>
-          <span className="home__card__content__difficulty">
-            Difficulté : {recipe.difficulty}
-          </span>
-          <Link
-            to={buildRecipeURL(recipe.title)}
-            className="home__card__content__link"
-          >
-            Voir la recette
-          </Link>
+  <>
+    <header className="home__header">
+      <Title title={getTitleByRecipesNumber(recipes.length)} />
+      <LoginForm />
+    </header>
+    <div className="home">
+      {recipes.map((recipe) => (
+        <div key={recipe.id} className="home__card">
+          <img className="home__card__img" alt={recipe.name} src={recipe.thumbnail} />
+          <div className="home__card__content">
+            <h2 className="home__card__content__title">
+              {recipe.title}
+            </h2>
+            <span className="home__card__content__difficulty">
+              Difficulté : {recipe.difficulty}
+            </span>
+            <Link
+              to={buildRecipeURL(recipe.title)}
+              className="home__card__content__link"
+            >
+              Voir la recette
+            </Link>
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
+      ))}
+    </div>
+  </>
 );
 
 Home.propTypes = {

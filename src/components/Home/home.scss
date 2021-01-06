@@ -2,13 +2,21 @@
 
 .home {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   padding: 2rem;
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    background-color: vars.$color-secondary;
+    width: 86%;
+  }
+
   &__card {
+    width: 28%;
     margin: 0.5rem;
-    width: 250px;
-    max-height: 280px;
+    min-width: 250px;
     border-radius: 10px;
     border: 1px solid vars.$color-border;
 

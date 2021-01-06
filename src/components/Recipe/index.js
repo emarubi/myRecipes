@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 // Composants
+import Title from 'src/components/Title';
 import Header from './Header';
 import Ingredients from './Ingredients';
 import Instructions from './Instructions';
@@ -15,18 +16,21 @@ import './styles.scss';
 function Recipe({ recipe }) {
   return (
     <div className="recipe">
-      <Header
-        name={recipe.title}
-        thumbnail={recipe.thumbnail}
-        author={recipe.author}
-        difficulty={recipe.difficulty}
-      />
-      <Ingredients
-        list={recipe.ingredients}
-      />
-      <Instructions
-        steps={recipe.instructions}
-      />
+      <Title title={recipe.title} />
+      <div className="recipe__content">
+        <Header
+          name={recipe.title}
+          thumbnail={recipe.thumbnail}
+          author={recipe.author}
+          difficulty={recipe.difficulty}
+        />
+        <Ingredients
+          list={recipe.ingredients}
+        />
+        <Instructions
+          steps={recipe.instructions}
+        />
+      </div>
     </div>
   );
 }

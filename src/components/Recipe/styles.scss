@@ -1,4 +1,6 @@
 .recipe {
   max-width: 900px;
-  padding: 2em;
+  &__content {
+    padding: 2em;
+  }
 }
