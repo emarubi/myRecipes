@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { buildRecipeURL, getTitleByRecipesNumber } from 'src/utils';
 import './home.scss';
 import Title from 'src/components/Title';
-import LoginForm from '../LoginForm';
+import LoginForm from 'src/containers/LoginForm';
 
 const Home = ({ recipes }) => (
   <>

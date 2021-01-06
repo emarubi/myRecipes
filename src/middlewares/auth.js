@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 import {
-  LOGIN, loginSuccess, loginError, connectWebSocket, toggleSettings,
+  LOGIN, loginSuccess, loginError,
 } from 'src/store/actions';
 
 const authMiddleware = (store) => (next) => (action) => {
   if (action.type === LOGIN) {
     // on récupère email et mdp depuis le store
-    const { emailValue, passwordValue } = store.getState();
+    const { email, password } = store.getState();
     // on crée un objet config pour faire notre requete
     const config = {
       method: 'post', // on veut faire un post
@@ -16,19 +16,17 @@ const authMiddleware = (store) => (next) => (action) => {
       //   'Content-Type': 'application/json',
       // },
       data: { // nos données
-        email: emailValue,
-        password: passwordValue,
+        email,
+        password,
       },
     };
 
     axios(config) // on appelle axios avec cet objet de config
       .then((response) => { // then = cas de réussite
-        /* const nickname = response.data.pseudo;
+        console.log(response.data);
+        // const nickname = response.data.pseudo;
         // une action pour sauvegarder notre pseudo...
-        store.dispatch(loginSuccess(nickname));
-        // une action pour nous connecter à la websocket
-        store.dispatch(connectWebSocket());
-        store.dispatch(toggleSettings()); */
+        store.dispatch(loginSuccess());
       })
       .catch(() => { // catch : cas d'erreur
         store.dispatch(loginError());
