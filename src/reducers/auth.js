@@ -10,26 +10,31 @@ const initialState = {
   email: '',
   password: '',
   isLogged: false,
-  loggedMessage: 'Connecté',
+  // loggedMessage: 'Connecté',
+  nickname: null,
+  token: null,
 };
 
 function reducer(oldState = initialState, action) {
   switch (action.type) {
     case CHANGE_FIELD:
+      // action.name = le champ (email ou password)
+      // action.value = la saisie utilisateur
       return { // on fait un nouvel objet
         ...oldState, // on copie l'ancien state
-        [action.field]: action.text, // on met dans inputValue le parametre text de notre action
+        [action.name]: action.value, // on met dans la clé name le parametre value de notre action
       };
-    case LOGIN:
-      return {
-        ...oldState, // on copie l'ancien state
-      };
+    // case LOGIN:
+    //   return {
+    //     ...oldState, // on copie l'ancien state
+    //   };
     case LOGIN_SUCCESS:
       return {
         ...oldState,
-        emailValue: '',
-        passwordValue: '',
-        isLogged: true,
+        // on copie les données de l'action dans le reducer
+        logged: action.logged,
+        token: action.token,
+        nickname: action.pseudo,
       };
     case LOGIN_ERROR:
       return {
@@ -39,9 +44,11 @@ function reducer(oldState = initialState, action) {
     case LOGOUT:
       return {
         ...oldState,
-        emailValue: '',
-        passwordValue: '',
-        isLogged: false,
+        email: '',
+        password: '',
+        logged: false,
+        nickname: null,
+        token: null,
       };
     default:
       return { ...oldState };

@@ -4,17 +4,19 @@ import {
   LOGIN, loginSuccess, loginError,
 } from 'src/store/actions';
 
+// const data = JSON.stringify({ email: 'bouclierman@herocorp.io', password: 'jennifer' });
 const authMiddleware = (store) => (next) => (action) => {
   if (action.type === LOGIN) {
     // on récupère email et mdp depuis le store
-    const { email, password } = store.getState();
+    const { auth: { email, password } } = store.getState();
+    console.log(email, password);
     // on crée un objet config pour faire notre requete
     const config = {
       method: 'post', // on veut faire un post
       url: 'http://localhost:3001/login', // ici on a l'adresse
-      // headers: { // header qui dit qu'on envoie et recoit du json
-      //   'Content-Type': 'application/json',
-      // },
+      headers: { // header qui dit qu'on envoie et recoit du json
+        'Content-Type': 'application/json',
+      },
       data: { // nos données
         email,
         password,

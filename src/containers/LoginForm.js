@@ -8,20 +8,17 @@ import {
 
 // stateToProps = données
 const mapStateToProps = (state) => ({
-  // state = tout le state
-  // state.recipes = tranche "recettes"
-  // state.recipes.list = tableau dans la tranche recettes (initialState)
-  // recipes: state.recipes.list,
+  // je dois ajouter .auth après state pour aller dans le state de l'authentification
   email: state.auth.email,
   password: state.auth.password,
-  isLogged: state.auth.isLogged,
+  isLogged: state.auth.logged,
   loggedMessage: state.auth.loggedMessage,
   // hasError: state.loginError,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   changeField: (value, name) => {
-    dispatch(changeField(name, value));
+    dispatch(changeField(value, name));
   },
 
   handleLogin: () => {

@@ -5,10 +5,10 @@ export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGOUT = 'LOGOUT';
 
 // action creator qui fabrique une action de type CHANGE_INPUT
-export const changeField = (field, text) => ({
+export const changeField = (value, name) => ({
   type: CHANGE_FIELD,
-  field,
-  text,
+  value,
+  name,
 });
 
 export const login = () => ({
