@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 // on importe le composant de présentation
 import LoginForm from 'src/components/LoginForm';
-import { changeAuthField } from 'src/store/actions';
 
 // câblage des données
 // stateToProps = données
@@ -19,7 +18,11 @@ const mapDispatchToProps = (dispatch) => ({
   changeField: (value, name) => {
     // action creator : on appele une fonction qui fabrique l'action
     // le retour de cette fonction, est donné a dispatch
-    dispatch(changeAuthField(value, name));
+    dispatch({
+      type: 'CHANGE_AUTH_FIELD',
+      name,
+      value,
+    });
   },
 
   handleLogin: () => {

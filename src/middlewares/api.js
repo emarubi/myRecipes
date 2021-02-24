@@ -3,8 +3,8 @@ import axios from 'axios';
 const api = (store) => (next) => (action) => {
   switch (action.type) {
     case 'GET_RECIPES':
-      axios.get('http://localhost:3001/recipes')
-      //  axios.get('https://orecipes.bluefoo.fr/recipes')
+      // axios.get('http://localhost:3001/recipes')
+      axios.get('https://orecipes.bluefoo.fr/recipes')
         .then((response) => {
           // on envoie une action pour sauvegarder les recettes
           // avec un second paramètre qui contient la réponse
@@ -19,8 +19,8 @@ const api = (store) => (next) => (action) => {
       // on crée un objet config pour faire notre requete
       const config = {
         method: 'post', // on veut faire un post
-        url: 'http://localhost:3001/login', // ici on a l'adresse
-        // url:'https://orecipes.bluefoo.fr/recipes',
+        // url: 'http://localhost:3001/login', // ici on a l'adresse
+        url: 'https://orecipes.bluefoo.fr/login',
         headers: { // header qui dit qu'on envoie et recoit du json
           'Content-Type': 'application/json',
         },
@@ -53,8 +53,8 @@ const api = (store) => (next) => (action) => {
       const { auth: { token } } = store.getState();
       const config = {
         method: 'post',
-        url: 'http://localhost:3001/favorites',
-        // url:'https://orecipes.bluefoo.fr/favorites',
+        // url: 'http://localhost:3001/favorites',
+        url: 'https://orecipes.bluefoo.fr/favorites',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`, // on ajoute le token au header

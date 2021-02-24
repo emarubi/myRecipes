@@ -21,5 +21,10 @@
 @media screen and (max-width: 414px) {
   .nav {
     display: none;
+    // position: absolute;
+    // background-color: rgba(117, 190, 218, 0.0);
+    &__item {
+      font-size: 1rem;
+    }
   }
 }

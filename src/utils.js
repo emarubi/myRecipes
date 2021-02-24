@@ -24,11 +24,11 @@ export const getRecipeBySlug = (recipes, slug) => (
 export const getTitleByRecipesNumber = (nbRecipes) => {
   switch (nbRecipes) {
     case 0:
-      return 'Site en cours de construction. Revenez plus tard.';
+      return 'Il n\'y a pas de recettes dans vos favoris.';
     case 1:
-      return 'Découvrez notre recette';
+      return 'Mes meilleures recettes';
     default:
-      return 'Découvrez nos recettes';
+      return 'Mes meilleures recettes';
   }
 };
 

@@ -41,14 +41,14 @@ const LoginForm = ({
           <Field
             name="email"
             placeholder="Adresse Email"
-            onChange={changeField}
+            onChange={changeField} // sera appelé avec value + name
             value={email}
           />
           <Field
             name="password"
             type="password"
             placeholder="Mot de passe"
-            onChange={changeField}
+            onChange={changeField} // sera appelé avec value + name
             value={password}
           />
           <button
