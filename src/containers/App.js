@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+// composant de présentation
 import App from 'src/components/App';
 
 const mapStateToProps = (state) => ({
@@ -6,6 +7,7 @@ const mapStateToProps = (state) => ({
   hasData: state.recipes.list.length > 0,
 });
 
+// mapDispatchToProps = cablage des actions (props de type fonction)
 const mapDispatchToProps = (dispatch) => ({
   loadRecipes: () => {
     dispatch({ type: 'GET_RECIPES' });

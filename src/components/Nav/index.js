@@ -21,6 +21,16 @@ const Nav = ({ recipes }) => (
           Accueil
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          activeClassName="nav__item--active"
+          exact
+          to="/favorites"
+          className="nav__item"
+        >
+          Favoris ⭐
+        </NavLink>
+      </li>
       {recipes.map((recipe) => (
         <li key={recipe.id}>
           <NavLink

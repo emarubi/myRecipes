@@ -4,11 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 
+
+import store from 'src/store';
+
 // == Import : local
 // Composants
 import App from 'src/containers/App';
-
-import store from 'src/store';
 
 // == Render
 // On englobe notre composant App

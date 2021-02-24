@@ -25,7 +25,10 @@ Ingredients.propTypes = { // mes props sont de type...
   list: PropTypes.arrayOf( // je veux un tableau
     PropTypes.shape({ // dans ce tableau, il ya des objets qui contiennent :
       id: PropTypes.number.isRequired, // un id
-      quantity: PropTypes.number.isRequired, // une quantité
+      quantity: PropTypes.oneOfType([ // on autorise des quantités
+        PropTypes.number.isRequired, // en nombre
+        PropTypes.string.isRequired, // ou en texte
+      ]).isRequired,
       unit: PropTypes.string.isRequired, // une unité
       name: PropTypes.string.isRequired, // un nom
     }),

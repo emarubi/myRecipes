@@ -1,0 +1,15 @@
+@use 'src/styles/vars';
+
+.main-header {
+  background-color: vars.$color-secondary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1.5rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1.5rem;
+  }
+}

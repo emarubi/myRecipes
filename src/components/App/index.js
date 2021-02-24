@@ -28,6 +28,9 @@ const App = ({ loadRecipes, hasData }) => {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route exact path="/favorites">
+          <Home showFavorites />
+        </Route>
         <Route exact path="/recipe/:slug">
           {hasData && <Recipe />}
         </Route>

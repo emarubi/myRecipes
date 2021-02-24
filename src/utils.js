@@ -14,6 +14,9 @@ export const slugifyTitle = (title) => {
 export const buildRecipeURL = (title) => `/recipe/${slugifyTitle(title)}`;
 
 // trouver une recette selon son slug
+// je veux trouver dans mon tableau de recettes...
+// la recette dont le titre, une fois transformé en slug...
+// est égal au 2eme parametre (slug)
 export const getRecipeBySlug = (recipes, slug) => (
   recipes.find((recipe) => slugifyTitle(recipe.title) === slug)
 );
@@ -29,20 +32,33 @@ export const getTitleByRecipesNumber = (nbRecipes) => {
   }
 };
 
+// fonction qui renvoie une string qui compte de 0 à length
+// sauf que...
+// on remplace les multiples de 3 par Fizz
+// et les multiples de 5 par Buzz
+// et les multiples de 3 et 5 par FizzBuzz
 export const fizzBuzz = (length) => {
   let result = '';
-  for (let i = 1; i <= length; i++) {
-    if (i % 15 === 0) {
+  let i = 0;
+
+  while (i <= length) {
+    if (i === 0) {
+      result += '0';
+    }
+    else if (i % 3 === 0 && i % 5 === 0) {
       result += 'FizzBuzz';
+    }
+    else if (i % 3 === 0) { // divisible par 3
+      result += 'Fizz';
     }
     else if (i % 5 === 0) {
       result += 'Buzz';
     }
-    else if (i % 3 === 0) {
-      result += 'Fizz';
-    }
     else {
       result += i;
     }
+    i += 1;
   }
+
+  return result;
 };

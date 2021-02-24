@@ -1,5 +1,6 @@
 .login-form {
   width: 50%;
+  
 }
 .login-form-element {
   padding:20px;
@@ -24,4 +25,10 @@
   border: 0;
   padding: .7em;
   height: 2.5em;
+}
+
+@media screen and (max-width: 414px) {
+  .login-form {
+    width: 100%;
+  }
 }

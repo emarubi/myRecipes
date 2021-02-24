@@ -65,5 +65,6 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1",
     "slugify": "^1.4.6"
-  }
+  },
+  "version": "0.0.0"
 }

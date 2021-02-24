@@ -23,7 +23,7 @@ describe('reducer for auth', () => {
       // on veut tester que après un appel au reducer le state a bien changé
       // je commence par initialiser mon reducer (appel sans param)
       // pour avoir mon state de départ
-      const initialState = authReducer();
+      const firstState = authReducer();
 
       // je crée une action de test
       const changeFieldEmail = {
@@ -38,16 +38,24 @@ describe('reducer for auth', () => {
         value: 'felix',
       };
 
-      const stateAfterChangingEmail = authReducer(initialState, changeFieldEmail);
+      const stateAfterChangingEmail = authReducer(firstState, changeFieldEmail);
       // je veux tester qu'il y a bien une clé 'email'
       // et que cette clé contient 'toto@titi.fr'.
       expect(stateAfterChangingEmail).to.have.property('email', 'toto@titi.fr');
 
-      const stateAfterChangingPassword = authReducer(initialState, changeFieldPassword);
+      const stateAfterChangingPassword = authReducer(firstState, changeFieldPassword);
 
       // je veux tester qu'il y a bien une clé 'password'
       // et que cette clé contient 'toto@titi.fr'.
       expect(stateAfterChangingPassword).to.have.property('password', 'felix');
+    });
+
+    it('should handle LOGIN_SUCCESS action', () => {
+      // todo
+    });
+
+    it('should handle LOGOUT action', () => {
+      // todo
     });
   });
 });

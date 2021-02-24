@@ -6,15 +6,8 @@
   width: 100%;
   padding: 2rem;
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    background-color: vars.$color-secondary;
-    width: 86%;
-  }
-
   &__card {
-    width: 28%;
+    width: 45%;
     margin: 0.5rem;
     min-width: 250px;
     border-radius: 10px;
@@ -45,6 +38,17 @@
         color: vars.$color-primary;
         font-size: 1.1rem;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .home {
+    justify-content: center;
+    padding: 2rem 0;
+
+    &__card {
+      width: 80vw;
     }
   }
 }
