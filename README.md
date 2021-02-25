@@ -1,6 +1,6 @@
-# oRecipes
+# myRecipes
 
-Amusons-nous avec React, Redux, React Router :tada:
+Site de recettes réalisé avec React, Redux, React Router :tada:
 
 ## Objectif
 
@@ -10,8 +10,6 @@ Amusons-nous avec React, Redux, React Router :tada:
 ## Recipe Login
 
 Il parait que le serveur nous proposant de merveilleuses recettes nous propose également de nous connecter avec le compte d'utilisateurs ayant des recettes favorites.
-
-Faisons les curieux et essayons de nous connecter pour faire tout ça
 
 ## Objectifs
 
