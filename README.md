@@ -24,9 +24,14 @@ Faisons les curieux et essayons de nous connecter pour faire tout ça
 - Déclencher la connexion au serveur `React-recipes-server`
 - **POST** http://localhost:3001/login : en passant `email` et `password`
 
-### Utilisateurs
+### Login Utilisateurs en dur pour tests
 
 - `bouclierman@herocorp.io` / `jennifer`
 - `acidman@herocorp.io` / `fructis`
 - `captain.sportsextremes@herocorp.io` / `pingpong`
+
+## Prochaine version
+- créer une base de données pour pouvoir gérer les recettes, les favoris et les utilisateurs
+- connecter l'API à la bdd pour effectuer de requêtes CRUD
+- ajouter un blog
   
